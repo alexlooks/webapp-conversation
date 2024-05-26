@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+const port = process.env.PORT || 3001;
 const nextConfig = {
   productionBrowserSourceMaps: false, // enable browser source map generation during the production build
   // Configure pageExtensions to include md and mdx
@@ -15,6 +16,9 @@ const nextConfig = {
   typescript: {
     // https://nextjs.org/docs/api-reference/next.config.js/ignoring-typescript-errors
     ignoreBuildErrors: true,
+  },
+  serverRuntimeConfig: {
+    port
   },
 }
 
